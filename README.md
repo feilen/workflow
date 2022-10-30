@@ -14,6 +14,15 @@ I put a little work into making my [dotfiles](https://github.com/feilen/dotfiles
 
 Not an original idea, but peppering fuzzy searching and Ripgrep throughout your workflow is incredibly powerful. I've customized my Vim/Tmux to have a very similar setup wherever I am - Ctrl + G (to ripgrep) or Ctrl + F (to filesearch) anywhere, and then wherever possible, preview the highlighted file/line. This is trickier if you're on a non-controlled development server as many of the legacy plugins I use with Vim don't backport that far, so I've ended up making a few modifications to autoload only working versions.
 
+The most important part (and one I often have to pull out alongside if I'm using another IDE) is the Ctrl + G code search with ripgrep. I do a lot of small contributions to unfamiliar codebases, which previously the biggest haul would be getting familiar with the particular codebase at hand, then making my additions. With this my workflow is often more like:
+
+- see something related in the UI, e.g. "Set maximum time limit"
+- ctrl+G, find where that string is defined, e.g. set_max_time_limit_string
+- ctrl+G (without backing out), find all instances of set_max_time_limit_string
+- work my way back through the stack until I find implementation logic
+- add my own desired feature there, and keep re-adding until the code compiles (is implemented all the way through) e.g. "set_max_word_limit"
+- do one double-search for both my feature and the related one, and double check anywhere the original feature exists but mine doesn't. 
+
 ## Home
 
 ### Keeping stock
